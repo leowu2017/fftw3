@@ -10,12 +10,12 @@ if (POLICY CMP0042)
   cmake_policy (SET CMP0042 NEW)
 endif ()
 
-option (BUILD_SHARED_LIBS "Build shared libraries" ON)
-option (BUILD_TESTS "Build tests" ON)
+option (BUILD_SHARED_LIBS "Build shared libraries" OFF)
+option (BUILD_TESTS "Build tests" OFF)
 
 option (ENABLE_OPENMP "Use OpenMP for multithreading" OFF)
-option (ENABLE_THREADS "Use pthread for multithreading" OFF)
-option (WITH_COMBINED_THREADS "Merge thread library" OFF)
+option (ENABLE_THREADS "Use pthread for multithreading" ON)
+option (WITH_COMBINED_THREADS "Merge thread library" ON)
 
 option (ENABLE_FLOAT "single-precision" OFF)
 option (ENABLE_LONG_DOUBLE "long-double precision" OFF)
@@ -27,6 +27,8 @@ option (ENABLE_AVX "Compile with AVX instruction set support" OFF)
 option (ENABLE_AVX2 "Compile with AVX2 instruction set support" OFF)
 
 option (DISABLE_FORTRAN "Disable Fortran wrapper routines" OFF)
+
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 include(GNUInstallDirs)
 
